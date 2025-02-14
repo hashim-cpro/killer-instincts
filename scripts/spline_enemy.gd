@@ -1,4 +1,4 @@
-extends "res://kill_zone.gd"
+extends "res://scripts/kill_zone.gd"
 
 const speed = 60
 
