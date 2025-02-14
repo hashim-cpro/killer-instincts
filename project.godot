@@ -14,10 +14,19 @@ config/name="Killer Instincts"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+run/name="Killer Intincts"
+
+[autoload]
+
+GUIDE="*res://addons/guide/guide.gd"
 
 [dotnet]
 
 project/assembly_name="Killer Instincts"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/guide/plugin.cfg")
 
 [input]
 

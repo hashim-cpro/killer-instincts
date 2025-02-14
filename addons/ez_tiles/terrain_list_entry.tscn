@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk3duerdgfgah"]
+
+[ext_resource type="Script" path="res://addons/ez_tiles/terrain_list_entry.gd" id="1_237eo"]
+[ext_resource type="Texture2D" uid="uid://smg4iofcineo" path="res://addons/ez_tiles/Remove.svg" id="1_e3wgq"]
+[ext_resource type="Texture2D" uid="uid://dwo07c1odx7ob" path="res://addons/ez_tiles/Edit.svg" id="2_6tddt"]
+[ext_resource type="ButtonGroup" uid="uid://b5bf2ekbf2vrc" path="res://addons/ez_tiles/select_terrain_button_group.tres" id="2_framc"]
+[ext_resource type="Texture2D" uid="uid://cxl4w251e8xgf" path="res://addons/ez_tiles/Save.svg" id="4_6vr40"]
+[ext_resource type="Texture2D" uid="uid://cfrwoh80yb3se" path="res://addons/ez_tiles/exclamation-warning-triangle-icon.svg" id="6_yi7ck"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n7skr"]
+size = Vector2(384, 256)
+
+[node name="TerrainListEntry" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_237eo")
+
+[node name="WarningIcon" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+tooltip_text = "Unexpected image size: 
+Expected it to be: "
+texture = ExtResource("6_yi7ck")
+stretch_mode = 3
+
+[node name="IconTextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = SubResource("PlaceholderTexture2D_n7skr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TerrainNameButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = ExtResource("2_framc")
+alignment = 0
+
+[node name="TerrainNameInput" type="LineEdit" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Terrain name..."
+select_all_on_focus = true
+
+[node name="EditButton" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Change Terrain Name"
+icon = ExtResource("2_6tddt")
+
+[node name="SaveButton" type="Button" parent="."]
+visible = false
+layout_mode = 2
+icon = ExtResource("4_6vr40")
+
+[node name="CollisionTypeButton" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Pick a template for collision polygon, or pick:
+- No Collision
+- Navigable, i.e.: no Collision with Navigation; where navigation polygons are generated as full rectangles for pathfinding."
+selected = 8
+fit_to_longest_item = false
+allow_reselect = true
+item_count = 10
+popup/item_0/text = "Rectangles"
+popup/item_1/text = "Sloped All Corners"
+popup/item_1/id = 3
+popup/item_2/text = "Sloped Top Corners"
+popup/item_2/id = 1
+popup/item_3/text = "Sloped Bottom Corners"
+popup/item_3/id = 4
+popup/item_4/text = "Rounded Corners"
+popup/item_4/id = 5
+popup/item_5/text = "Rounded Corners (Inverse)"
+popup/item_5/id = 6
+popup/item_6/text = "Tree"
+popup/item_6/id = 7
+popup/item_7/text = "Cactus"
+popup/item_7/id = 8
+popup/item_8/text = "No Collision"
+popup/item_8/id = 2
+popup/item_9/text = "Navigable"
+popup/item_9/id = 9
+
+[node name="RemoveButton" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("1_e3wgq")
+
+[connection signal="gui_input" from="IconTextureRect" to="." method="_on_icon_texture_rect_gui_input"]
+[connection signal="pressed" from="TerrainNameButton" to="." method="_on_terrain_name_button_pressed"]
+[connection signal="focus_exited" from="TerrainNameInput" to="." method="save_new_terrain_name"]
+[connection signal="text_submitted" from="TerrainNameInput" to="." method="_on_terrain_name_input_text_submitted"]
+[connection signal="pressed" from="EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="save_new_terrain_name"]
+[connection signal="item_selected" from="CollisionTypeButton" to="." method="_on_collision_type_button_item_selected"]
+[connection signal="pressed" from="RemoveButton" to="." method="_on_remove_button_pressed"]
