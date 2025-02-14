@@ -1,6 +1,6 @@
 [gd_scene load_steps=61 format=3 uid="uid://30ywf4vwchjw"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_j51in"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_j51in"]
 [ext_resource type="Texture2D" uid="uid://dpynccj5mhi4w" path="res://assets/sprites/sem_arma/sem_arma/Idle (1).png" id="1_mvuxl"]
 [ext_resource type="Texture2D" uid="uid://b10upqmekkx8i" path="res://assets/sprites/sem_arma/sem_arma/Dead_ (1).png" id="1_o6dbs"]
 [ext_resource type="Texture2D" uid="uid://cd0x0jhq821f7" path="res://assets/sprites/sem_arma/sem_arma/Idle (2).png" id="2_4rqtg"]
