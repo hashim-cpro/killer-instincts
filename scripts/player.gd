@@ -12,23 +12,22 @@ func _physics_process(delta: float) -> void:
 		
 	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		animated_sprite.play("jump")
 		velocity.y = JUMP_VELOCITY
 		$StandingCollisionShape2D.disabled = false
 		$CrouchingCollisionShape2D.disabled = true
 	
-	if Input.is_action_just_released("jump"):
-		animated_sprite.play("idle")
 	# Horizontal Movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
-		animated_sprite.play("walk")
+		if is_on_floor():
+			animated_sprite.play("walk")
 		animated_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_on_floor():
+			animated_sprite.play("idle")
 		
-	
 	# Crouch
 	if Input.is_action_pressed("crouch"):
 		animated_sprite.play("gun crouch")
@@ -37,6 +36,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		$StandingCollisionShape2D.disabled = false
 		$CrouchingCollisionShape2D.disabled = true
+	
+	# Check if landed
+	if is_on_floor():
+		if animated_sprite.animation in ["jump", "fall jump"]:
+			animated_sprite.play("idle")
+	else:
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		elif velocity.y > 0:
+			animated_sprite.play("fall jump")
 	
 	# Attack
 	#if Input.is_action_just_pressed(""):

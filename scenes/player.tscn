@@ -287,10 +287,8 @@ script = ExtResource("1_j51in")
 auto_translate_mode = 1
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_1u8nl")
-animation = &"jump"
+animation = &"throw"
 autoplay = "idle"
-frame = 9
-frame_progress = 1.0
 
 [node name="StandingCollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.1, 0.1)
