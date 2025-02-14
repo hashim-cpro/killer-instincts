@@ -285,6 +285,7 @@ script = ExtResource("1_j51in")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 auto_translate_mode = 1
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_1u8nl")
 animation = &"jump"
 autoplay = "idle"
@@ -293,10 +294,12 @@ frame_progress = 1.0
 
 [node name="StandingCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 12)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_ryctr")
 
 [node name="CrouchingCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 1)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_eav4x")
 disabled = true
 

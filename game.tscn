@@ -217,12 +217,14 @@ position = Vector2(-1, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_los63")]
 position = Vector2(-20, -169)
+scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1, 1)
 limit_bottom = 130
 limit_smoothed = true
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nmim1")
