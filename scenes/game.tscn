@@ -213,11 +213,11 @@ _data = {
 "move": SubResource("Animation_d0fxa")
 }
 
-[sub_resource type="Animation" id="Animation_pcoih"]
-resource_name = "move"
-
 [sub_resource type="Animation" id="Animation_jawrw"]
 resource_name = "RESET"
+
+[sub_resource type="Animation" id="Animation_pcoih"]
+resource_name = "move"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wq71e"]
 _data = {
