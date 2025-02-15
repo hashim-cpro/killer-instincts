@@ -32,3 +32,13 @@ func _on_credits_button_pressed() -> void:
 	optionsScreen.visible = false
 	titleScreen.visible = false
 	creditsScreen.visible = false
+
+func _on_back_button_from_options_pressed() -> void:
+	optionsScreen.visible = false
+	titleScreen.visible = true
+	creditsScreen.visible = false
+
+func _on_back_button_from_credits_pressed() -> void:
+	optionsScreen.visible = false
+	titleScreen.visible = true
+	creditsScreen.visible = false

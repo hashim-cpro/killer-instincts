@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://bx1aj4msnomd5" path="res://assets/images/Teri Games.png" id="1_il4uk"]
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_wgpm7"]
 
+[sub_resource type="Animation" id="Animation_rxayq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_if2nx"]
 resource_name = "terigames slash"
 length = 2.0
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_rxayq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vhfq3"]
@@ -84,6 +84,7 @@ libraries = {
 }
 
 [node name="TitleScreen" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -118,11 +119,40 @@ text = "Credits"
 [node name="OptionsScreen" type="BoxContainer" parent="."]
 layout_mode = 2
 offset_bottom = 40.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsScreen"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton_fromOptions" type="Button" parent="OptionsScreen/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsScreen/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionsScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Frames Per Second (FPS)"
+
+[node name="HSlider" type="HSlider" parent="OptionsScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 
 [node name="CreditsScreen" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 2
 offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsScreen"]
+layout_mode = 2
+
+[node name="BackButton_fromCredits" type="Button" parent="CreditsScreen/VBoxContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="OptionsScreen/VBoxContainer/BackButton_fromOptions" to="." method="_on_back_button_from_options_pressed"]
+[connection signal="pressed" from="CreditsScreen/VBoxContainer/BackButton_fromCredits" to="." method="_on_back_button_from_credits_pressed"]
