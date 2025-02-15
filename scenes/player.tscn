@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://30ywf4vwchjw"]
+[gd_scene load_steps=62 format=3 uid="uid://30ywf4vwchjw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j51in"]
 [ext_resource type="Texture2D" uid="uid://dpynccj5mhi4w" path="res://assets/sprites/sem_arma/sem_arma/Idle (1).png" id="1_mvuxl"]
@@ -276,6 +276,9 @@ size = Vector2(119, 220)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eav4x"]
 size = Vector2(166, 174)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28nkf"]
+size = Vector2(10, 22)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
 position = Vector2(0, -7)
@@ -297,6 +300,13 @@ shape = SubResource("RectangleShape2D_ryctr")
 [node name="CrouchingCollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_eav4x")
+disabled = true
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(9, 0)
+shape = SubResource("RectangleShape2D_28nkf")
 disabled = true
 
 [connection signal="ready" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_ready"]
