@@ -216,7 +216,7 @@ _data = {
 position = Vector2(-1, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_los63")]
-position = Vector2(-200, -100)
+position = Vector2(-120, -100)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
