@@ -49,7 +49,7 @@ radius = 6.08276
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k323r")
 autoplay = "default"
-frame_progress = 0.685429
+frame_progress = 0.0800544
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

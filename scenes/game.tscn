@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ckjx3noogl6dl"]
+[gd_scene load_steps=18 format=4 uid="uid://ckjx3noogl6dl"]
 
 [ext_resource type="PackedScene" uid="uid://30ywf4vwchjw" path="res://scenes/player.tscn" id="1_los63"]
 [ext_resource type="Texture2D" uid="uid://3vcrgmm073mx" path="res://assets/sprites/world_tileset.png" id="3_6j1wb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5q6vqa3inh1l" path="res://scenes/kill_zone.tscn" id="6_t5qfp"]
 [ext_resource type="PackedScene" uid="uid://cbsx7jhi0cgvg" path="res://scenes/spline_enemy.tscn" id="7_ww7ff"]
 [ext_resource type="Script" path="res://scripts/spline_enemy.gd" id="8_cl3ig"]
+[ext_resource type="PackedScene" uid="uid://bqkelhompp7uq" path="res://scenes/gun_pickup.tscn" id="8_fxq0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivkn"]
 texture = ExtResource("3_6j1wb")
@@ -279,12 +280,10 @@ libraries = {
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("5_ydu1x")]
-visible = false
-position = Vector2(-70, -20)
+position = Vector2(-288, 11)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("5_ydu1x")]
-visible = false
-position = Vector2(-30, -20)
+position = Vector2(-276, 11)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("5_ydu1x")]
 visible = false
@@ -306,6 +305,9 @@ position = Vector2(90, -7)
 position = Vector2(-106, 2)
 collision_mask = 2
 script = ExtResource("8_cl3ig")
+
+[node name="Gun" parent="." instance=ExtResource("8_fxq0w")]
+position = Vector2(-219, 7)
 
 [connection signal="body_entered" from="KillZone" to="CharacterBody2D" method="_on_kill_zone_body_entered"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]

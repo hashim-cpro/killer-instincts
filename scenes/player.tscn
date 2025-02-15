@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://30ywf4vwchjw"]
+[gd_scene load_steps=110 format=3 uid="uid://30ywf4vwchjw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j51in"]
 [ext_resource type="Texture2D" uid="uid://dpynccj5mhi4w" path="res://assets/sprites/sem_arma/sem_arma/Idle (1).png" id="1_mvuxl"]
@@ -34,29 +34,77 @@
 [ext_resource type="Texture2D" uid="uid://b3jm8tvi8oc08" path="res://assets/sprites/com_arma/com_arma/gun_Crouch_idle_forward (7).png" id="23_ebgdo"]
 [ext_resource type="Texture2D" uid="uid://bcaejbonna68h" path="res://assets/sprites/com_arma/com_arma/gun_Crouch_idle_forward (8).png" id="24_a84sw"]
 [ext_resource type="Texture2D" uid="uid://cl0uc8fia1nk7" path="res://assets/sprites/sem_arma/sem_arma/Jump (1).png" id="25_ermxt"]
+[ext_resource type="Texture2D" uid="uid://2jtatra4mrlq" path="res://assets/sprites/com_arma/com_arma/gun_Dead (1).png" id="26_hugcy"]
 [ext_resource type="Texture2D" uid="uid://od57xw7nxxtf" path="res://assets/sprites/sem_arma/sem_arma/Jump (2).png" id="26_qhwev"]
 [ext_resource type="Texture2D" uid="uid://y3rcvsnedur0" path="res://assets/sprites/sem_arma/sem_arma/Jump (3).png" id="27_drqrj"]
+[ext_resource type="Texture2D" uid="uid://bi22513evbn1b" path="res://assets/sprites/com_arma/com_arma/gun_Dead (2).png" id="27_vgu8h"]
+[ext_resource type="Texture2D" uid="uid://b05tr1ydu1rgt" path="res://assets/sprites/com_arma/com_arma/gun_Dead (3).png" id="28_l68vd"]
 [ext_resource type="Texture2D" uid="uid://bxvikrl8jtyph" path="res://assets/sprites/sem_arma/sem_arma/Jump (4).png" id="28_wmo4r"]
 [ext_resource type="Texture2D" uid="uid://boi6u8gs0qlpu" path="res://assets/sprites/sem_arma/sem_arma/Jump (5).png" id="29_70f1j"]
+[ext_resource type="Texture2D" uid="uid://bwh63gnocw1b2" path="res://assets/sprites/com_arma/com_arma/gun_Dead (4).png" id="29_84hwc"]
 [ext_resource type="Texture2D" uid="uid://c3r01428jusg3" path="res://assets/sprites/sem_arma/sem_arma/Jump (6).png" id="30_qb5tc"]
+[ext_resource type="Texture2D" uid="uid://cj3nolsri0ome" path="res://assets/sprites/com_arma/com_arma/gun_Dead (5).png" id="30_s2w3v"]
 [ext_resource type="Texture2D" uid="uid://d2rfs8ene0e87" path="res://assets/sprites/sem_arma/sem_arma/Jump (7).png" id="31_w3tt3"]
+[ext_resource type="Texture2D" uid="uid://b7gur72bu01s5" path="res://assets/sprites/com_arma/com_arma/gun_Dead (6).png" id="31_wbr6h"]
+[ext_resource type="Texture2D" uid="uid://gk1rtv1phqcf" path="res://assets/sprites/com_arma/com_arma/gun_Dead (7).png" id="32_gphyv"]
 [ext_resource type="Texture2D" uid="uid://btcxpevc43a53" path="res://assets/sprites/sem_arma/sem_arma/Jump (8).png" id="32_jfb8m"]
 [ext_resource type="Texture2D" uid="uid://dkhgj1qcrmo5l" path="res://assets/sprites/sem_arma/sem_arma/Throw (1).png" id="33_lpg1e"]
+[ext_resource type="Texture2D" uid="uid://ub5nw6hnem8l" path="res://assets/sprites/com_arma/com_arma/gun_Dead (8).png" id="33_sywrj"]
+[ext_resource type="Texture2D" uid="uid://bnkue54yii6sc" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (1).png" id="34_57q67"]
 [ext_resource type="Texture2D" uid="uid://ck68n4pc5tclh" path="res://assets/sprites/sem_arma/sem_arma/Throw (2).png" id="34_tlyq4"]
 [ext_resource type="Texture2D" uid="uid://hpbg1sdj7rd2" path="res://assets/sprites/sem_arma/sem_arma/Throw (3).png" id="35_7iiec"]
+[ext_resource type="Texture2D" uid="uid://du03jtl34av7q" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (2).png" id="35_xoqg8"]
+[ext_resource type="Texture2D" uid="uid://kb51v30lkvs" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (3).png" id="36_skoev"]
 [ext_resource type="Texture2D" uid="uid://8mph1e5dy2hb" path="res://assets/sprites/sem_arma/sem_arma/Throw (4).png" id="36_ywvti"]
+[ext_resource type="Texture2D" uid="uid://wcrrrfhbk8hm" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (4).png" id="37_5ayls"]
 [ext_resource type="Texture2D" uid="uid://cran7femylccl" path="res://assets/sprites/sem_arma/sem_arma/Throw (5).png" id="37_u43yl"]
+[ext_resource type="Texture2D" uid="uid://eb2o5giah51b" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (5).png" id="38_4vvdh"]
 [ext_resource type="Texture2D" uid="uid://cyhsvccx7a8f4" path="res://assets/sprites/sem_arma/sem_arma/Throw (6).png" id="38_m30cx"]
+[ext_resource type="Texture2D" uid="uid://c8sdk2oqk02gg" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (6).png" id="39_a4sy7"]
 [ext_resource type="Texture2D" uid="uid://dpq8myvcbhvv2" path="res://assets/sprites/sem_arma/sem_arma/Throw (7).png" id="39_f8jn3"]
+[ext_resource type="Texture2D" uid="uid://dx3o1blxmxkm" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (7).png" id="40_is3hj"]
 [ext_resource type="Texture2D" uid="uid://bybnqquecms6f" path="res://assets/sprites/sem_arma/sem_arma/Throw (8).png" id="40_s66ee"]
+[ext_resource type="Texture2D" uid="uid://dpncp0u47fpsx" path="res://assets/sprites/com_arma/com_arma/gun_Fall_loop (8).png" id="41_git1i"]
 [ext_resource type="Texture2D" uid="uid://cdpv3wwmjueyc" path="res://assets/sprites/sem_arma/sem_arma/Walk (1).png" id="41_qes0i"]
 [ext_resource type="Texture2D" uid="uid://dga2wnghgp628" path="res://assets/sprites/sem_arma/sem_arma/Walk (2).png" id="42_olh7s"]
+[ext_resource type="Texture2D" uid="uid://b0gyjsdicfhvk" path="res://assets/sprites/com_arma/com_arma/gun_Idle (1).png" id="42_pbubx"]
+[ext_resource type="Texture2D" uid="uid://c636h1klnpjeu" path="res://assets/sprites/com_arma/com_arma/gun_Idle (2).png" id="43_a1nro"]
 [ext_resource type="Texture2D" uid="uid://b46et7dw5vjbs" path="res://assets/sprites/sem_arma/sem_arma/Walk (3).png" id="43_h0p2b"]
+[ext_resource type="Texture2D" uid="uid://cvhgf8p08xgga" path="res://assets/sprites/com_arma/com_arma/gun_Idle (3).png" id="44_aiwkp"]
 [ext_resource type="Texture2D" uid="uid://j5grln5m3nv6" path="res://assets/sprites/sem_arma/sem_arma/Walk (4).png" id="44_sfed0"]
 [ext_resource type="Texture2D" uid="uid://cj2x0d24qf7q4" path="res://assets/sprites/sem_arma/sem_arma/Walk (5).png" id="45_ox3g8"]
+[ext_resource type="Texture2D" uid="uid://coraa8j1oe5k0" path="res://assets/sprites/com_arma/com_arma/gun_Idle (4).png" id="45_td37p"]
+[ext_resource type="Texture2D" uid="uid://bucne0roo8pjw" path="res://assets/sprites/com_arma/com_arma/gun_Idle (5).png" id="46_tynt6"]
 [ext_resource type="Texture2D" uid="uid://w46pc6ia5gf3" path="res://assets/sprites/sem_arma/sem_arma/Walk (6).png" id="46_vt2hv"]
+[ext_resource type="Texture2D" uid="uid://cysbb53r2wknw" path="res://assets/sprites/com_arma/com_arma/gun_Idle (6).png" id="47_4gmcn"]
 [ext_resource type="Texture2D" uid="uid://b2emdf2mspt58" path="res://assets/sprites/sem_arma/sem_arma/Walk (7).png" id="47_83h1r"]
 [ext_resource type="Texture2D" uid="uid://n0gj4dolhi0a" path="res://assets/sprites/sem_arma/sem_arma/Walk (8).png" id="48_2sgf6"]
+[ext_resource type="Texture2D" uid="uid://bwy06micfi3k7" path="res://assets/sprites/com_arma/com_arma/gun_Idle (7).png" id="48_6oav8"]
+[ext_resource type="Texture2D" uid="uid://w6x4b21uxfo" path="res://assets/sprites/com_arma/com_arma/gun_Idle (8).png" id="49_8sa8w"]
+[ext_resource type="Texture2D" uid="uid://gieug8t1bqmu" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (1).png" id="50_8t2lm"]
+[ext_resource type="Texture2D" uid="uid://cx71t0w6twh0q" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (2).png" id="51_51py3"]
+[ext_resource type="Texture2D" uid="uid://bp1fn74ud13w0" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (3).png" id="52_wqet7"]
+[ext_resource type="Texture2D" uid="uid://dcfk5rjlfskqn" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (4).png" id="53_hpi8t"]
+[ext_resource type="Texture2D" uid="uid://bsuqyifds8kv" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (5).png" id="54_0w012"]
+[ext_resource type="Texture2D" uid="uid://hs6emdpcf17e" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (6).png" id="55_bnkrl"]
+[ext_resource type="Texture2D" uid="uid://cdopygn8y8g8i" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (7).png" id="56_wbsc4"]
+[ext_resource type="Texture2D" uid="uid://bco3egilyijlk" path="res://assets/sprites/com_arma/com_arma/gun_Jump_down (8).png" id="57_o7vu6"]
+[ext_resource type="Texture2D" uid="uid://be4hor3t6mpqk" path="res://assets/sprites/com_arma/com_arma/gun_Walk (1).png" id="58_ldh0a"]
+[ext_resource type="Texture2D" uid="uid://cdvvocg12ac1f" path="res://assets/sprites/com_arma/com_arma/gun_Walk (2).png" id="59_7i365"]
+[ext_resource type="Texture2D" uid="uid://c3uh3jpfo7otn" path="res://assets/sprites/com_arma/com_arma/gun_Walk (3).png" id="60_iut21"]
+[ext_resource type="Texture2D" uid="uid://8is32n28g0mf" path="res://assets/sprites/com_arma/com_arma/gun_Walk (4).png" id="61_bxa84"]
+[ext_resource type="Texture2D" uid="uid://bvfomgpbvxqs3" path="res://assets/sprites/com_arma/com_arma/gun_Walk (5).png" id="62_ub5a1"]
+[ext_resource type="Texture2D" uid="uid://bg428dxnid8it" path="res://assets/sprites/com_arma/com_arma/gun_Walk (6).png" id="63_dknnn"]
+[ext_resource type="Texture2D" uid="uid://4n3xjpadeers" path="res://assets/sprites/com_arma/com_arma/gun_Walk (7).png" id="64_guiqt"]
+[ext_resource type="Texture2D" uid="uid://cp1a2rp6d5fpi" path="res://assets/sprites/com_arma/com_arma/gun_Walk (8).png" id="65_0nxoo"]
+[ext_resource type="Texture2D" uid="uid://sxbsbbfgkhvh" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (1).png" id="82_myhtr"]
+[ext_resource type="Texture2D" uid="uid://b44lgvagl1a5p" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (2).png" id="83_wpyyn"]
+[ext_resource type="Texture2D" uid="uid://by1wov8dh7tqm" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (3).png" id="84_qc640"]
+[ext_resource type="Texture2D" uid="uid://b0k0eke3o05da" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (4).png" id="85_4m5qo"]
+[ext_resource type="Texture2D" uid="uid://bnyaws4wymkwy" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (5).png" id="86_3yqcl"]
+[ext_resource type="Texture2D" uid="uid://dja4fdrnm0gw6" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (6).png" id="87_srnuj"]
+[ext_resource type="Texture2D" uid="uid://bofjnmtvh3jl4" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (7).png" id="88_w85ql"]
+[ext_resource type="Texture2D" uid="uid://bioie5nu0n88u" path="res://assets/sprites/com_arma/com_arma/gun_Idle_Forward (8).png" id="89_aqh0x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1u8nl"]
 animations = [{
@@ -116,7 +164,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall jump",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,6 +194,151 @@ animations = [{
 "loop": true,
 "name": &"gun crouch",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_hugcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vgu8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_l68vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_84hwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_s2w3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wbr6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gphyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sywrj")
+}],
+"loop": true,
+"name": &"gun dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_57q67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xoqg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_skoev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5ayls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4vvdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_a4sy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_is3hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_git1i")
+}],
+"loop": true,
+"name": &"gun fall jump",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_pbubx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_a1nro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_aiwkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_td37p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tynt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_4gmcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_6oav8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_8sa8w")
+}],
+"loop": true,
+"name": &"gun idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_8t2lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_51py3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_wqet7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_hpi8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_0w012")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_bnkrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_wbsc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_o7vu6")
+}],
+"loop": false,
+"name": &"gun jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_ldh0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_7i365")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_iut21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_bxa84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_ub5a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_dknnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_guiqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_0nxoo")
+}],
+"loop": true,
+"name": &"gun walk",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,6 +403,35 @@ animations = [{
 "loop": false,
 "name": &"jump",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_myhtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_wpyyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_qc640")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_4m5qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_3yqcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_srnuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_w85ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_aqh0x")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
