@@ -65,3 +65,4 @@ func _physics_process(delta: float) -> void:
 func _on_animation_finished():
 	if animated_sprite.animation == "throw":
 		is_throwing = false  # Reset flag when throw animation ends
+		$HitBox/CollisionShape2D.disabled = true
