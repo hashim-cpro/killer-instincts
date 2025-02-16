@@ -113,6 +113,7 @@ layout_mode = 2
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="TitleScreen/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Credits"
 
@@ -141,6 +142,7 @@ text = "Frames Per Second (FPS)"
 layout_mode = 2
 
 [node name="CreditsScreen" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 2
 offset_bottom = 40.0
 
