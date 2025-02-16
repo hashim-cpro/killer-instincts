@@ -52,7 +52,7 @@ autoplay = "default"
 frame_progress = 0.0800544
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 5)

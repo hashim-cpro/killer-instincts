@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqkelhompp7uq"]
+
+[ext_resource type="Script" path="res://scripts/gun_pickup.gd" id="1_mwr48"]
+[ext_resource type="Texture2D" uid="uid://bmvjdtqordsex" path="res://assets/sprites/Gun collection FREE version/Gun collection FREE version.svg" id="1_y3mmp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mm7j"]
+atlas = ExtResource("1_y3mmp")
+region = Rect2(0, 750, 401, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10mja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mm7j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cas4p"]
+radius = 5.0
+
+[node name="Gun Pickup" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_mwr48")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_10mja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_cas4p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
