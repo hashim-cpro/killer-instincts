@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("SplashScreen:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,8 +24,8 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("SplashScreen:modulate")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
@@ -38,7 +38,7 @@ tracks/0/keys = {
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("SplashScreen:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,8 +51,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vhfq3"]
 _data = {
 "RESET": SubResource("Animation_rxayq"),
-"terigames splash fade in": SubResource("Animation_if2nx"),
-"terigames splash fade out": SubResource("Animation_fqah0")
+"splash fade in": SubResource("Animation_if2nx"),
+"splash fade out": SubResource("Animation_fqah0")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_qqgd0"]
@@ -68,15 +68,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wgpm7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
+[node name="SplashScreen" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_il4uk")
 expand_mode = 1
-stretch_mode = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -118,6 +116,7 @@ layout_mode = 2
 text = "Credits"
 
 [node name="OptionsScreen" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 2
 offset_bottom = 40.0
 alignment = 1
@@ -130,16 +129,13 @@ alignment = 1
 layout_mode = 2
 text = "Back"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsScreen/VBoxContainer"]
+[node name="FPSLimit_container" type="HBoxContainer" parent="OptionsScreen/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="OptionsScreen/VBoxContainer/HBoxContainer"]
+[node name="FPSLimit_text" type="Label" parent="OptionsScreen/VBoxContainer/FPSLimit_container"]
 layout_mode = 2
-text = "Frames Per Second (FPS)"
-
-[node name="HSlider" type="HSlider" parent="OptionsScreen/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+text = "FPS Limit"
 
 [node name="CreditsScreen" type="BoxContainer" parent="."]
 visible = false

@@ -177,6 +177,21 @@ sources/0 = SubResource("TileSetAtlasSource_qivkn")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_22jfk"]
 distance = -24.0
 
+[sub_resource type="Animation" id="Animation_41l7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(467, -5)]
+}
+
 [sub_resource type="Animation" id="Animation_owkpu"]
 resource_name = "move"
 length = 2.003
@@ -192,21 +207,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(467, -5), Vector2(620, -77)]
-}
-
-[sub_resource type="Animation" id="Animation_41l7h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(467, -5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jodx4"]
@@ -313,6 +313,10 @@ position = Vector2(1289, -164)
 visible = false
 position = Vector2(-163, 5)
 bullet_speed = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="KillZone" to="CharacterBody2D" method="_on_kill_zone_body_entered"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]

@@ -1,9 +1,18 @@
 extends Control
 
-@onready var splashScreen = $TextureRect
+@onready var splashScreen = $SplashScreen
 @onready var titleScreen = $TitleScreen
 @onready var optionsScreen = $OptionsScreen
 @onready var creditsScreen = $CreditsScreen
+
+const splashes = ["res://assets/images/Teri Games.png"]
+
+func playSplashScreen(splash: String) -> void:
+	splashScreen.texture = load(splash)
+	$AnimationPlayer.play("splash fade in")
+	await get_tree().create_timer(5).timeout
+	$AnimationPlayer.play("splash fade out")
+	await get_tree().create_timer(3).timeout
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,10 +20,9 @@ func _ready() -> void:
 	creditsScreen.visible = false
 	splashScreen.visible = true
 	titleScreen.visible = false
-	$AnimationPlayer.play("terigames splash fade in")
-	await get_tree().create_timer(5).timeout
-	$AnimationPlayer.play("terigames splash fade out")
-	await get_tree().create_timer(3).timeout
+	for splash in splashes:
+		print("Loading splash ", splash)
+		await playSplashScreen(splash)
 	splashScreen.visible = false
 	titleScreen.visible = true
 
