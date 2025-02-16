@@ -7,6 +7,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	optionsScreen.visible = false
+	creditsScreen.visible = false
 	splashScreen.visible = true
 	titleScreen.visible = false
 	$AnimationPlayer.play("terigames splash fade in")

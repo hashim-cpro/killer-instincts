@@ -142,7 +142,6 @@ text = "Frames Per Second (FPS)"
 layout_mode = 2
 
 [node name="CreditsScreen" type="BoxContainer" parent="."]
-visible = false
 layout_mode = 2
 offset_bottom = 40.0
 
