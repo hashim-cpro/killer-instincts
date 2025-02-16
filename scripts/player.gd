@@ -8,18 +8,18 @@ const JUMP_VELOCITY = -250.0
 @onready var crouching_collision = $CrouchingCollisionShape2D
 @onready var hit_box_collision = $HitBox/CollisionShape2D
 
-var is_throwing = false # Tracks if the throw animation is active
-var has_gun = false # Tracks if the player has picked up the gun
+var bullet_scene = preload("res://scenes/bullet.tscn")
+var is_throwing = false 
+var has_gun = false 
 
 func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-	# Connect to the gun's signal (assuming the gun is a child in the scene)
-	var gun = get_node_or_null("../Gun") # Replace "Gun" with the actual name of your gun node
+	var gun = get_node_or_null("../Gun") 
 	if gun:
-		print("Gun node found in player script!") # Debug print
-		print("Attempting to connect to signal...") # Debug print
-		gun._if_body_entered.connect(_on_gun_picked_up) # Corrected signal name here
-		print("Signal connection attempted!") # Debug print
+		print("Gun node found in player script!") 
+		print("Attempting to connect to signal...") 
+		gun._if_body_entered.connect(_on_gun_picked_up) 
+		print("Signal connection attempted!") 
 	else:
 		print("Gun node NOT found in player script! Check node name and hierarchy.") # Debug print
 
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		if is_on_floor() and not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun walk") # Gun walk animation
+				animated_sprite.play("gun walk")
 			else:
 				animated_sprite.play("walk")
 		animated_sprite.flip_h = direction < 0
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_on_floor() and not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun idle") # Gun idle animation
+				animated_sprite.play("gun idle")
 			else:
 				animated_sprite.play("idle")
 
@@ -57,9 +57,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("crouch"):
 		if not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun crouch") # Gun crouch animation (you might need to create this)
+				animated_sprite.play("gun crouch") 
 			else:
-				animated_sprite.play("gun crouch") # Using "gun crouch" animation even without gun for crouching. You can change this to a normal "crouch" if you have one.
+				# A missing animation
+				animated_sprite.play("gun crouch") 
 		standing_collision.disabled = true
 		crouching_collision.disabled = false
 	else:
@@ -70,44 +71,51 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if animated_sprite.animation in ["jump", "fall jump"] and not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun idle") # Gun idle after landing
+				animated_sprite.play("gun idle")
 			else:
 				animated_sprite.play("idle")
 	else:
 		if velocity.y < 0 and not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun jump") # Gun jump animation
+				animated_sprite.play("gun jump")
 			else:
 				animated_sprite.play("jump")
 		elif velocity.y > 0 and not is_throwing:
 			if has_gun:
-				animated_sprite.play("gun fall jump") # Gun fall jump animation
+				animated_sprite.play("gun fall jump") 
 			else:
 				animated_sprite.play("fall jump")
 
-	# Attack (Throw with Gun - you might want to change this to shooting)
+	# Attack 
 	if Input.is_action_just_pressed("attack"):
 		is_throwing = true
 		if has_gun:
-			animated_sprite.play("shoot") # Gun throw animation (or gun shoot animation)
+			animated_sprite.play("shoot") 
+			shoot_bullet()
 		else:
 			animated_sprite.play("throw")
-		hit_box_collision.disabled = false
+			hit_box_collision.disabled = false
 
 
 	move_and_slide()
 
 func _on_animation_finished():
 	if animated_sprite.animation == "throw" or animated_sprite.animation == "shoot": # Added "gun throw" here
-		is_throwing = false # Reset flag when throw animation ends
+		is_throwing = false 
 		hit_box_collision.disabled = true
 
 func _on_gun_picked_up(body):
-	if body == self: # Check if the player is the body that entered the gun area
-		print("Signal Handler in Player Script: _on_gun_picked_up CALLED!") # Debug print
+	if body == self: #
+		print("Signal Handler in Player Script: _on_gun_picked_up CALLED!") 
 		print("Picked up a Gun! (from player script)")
 		has_gun = true
-		# Optionally, you can hide the gun sprite here from the player scene if it's still visible after pickup
-		var gun = get_node_or_null("../Gun") # Replace "Gun" with the actual name of your gun node
+		var gun = get_node_or_null("../Gun") 
 		if gun:
-			gun.queue_free() # Destroy the gun node after pickup from scene tree
+			gun.queue_free() 
+
+func shoot_bullet():
+	var bullet_instance = bullet_scene.instantiate()
+	bullet_instance.position = global_position
+	var facing_direction = Vector2.LEFT if animated_sprite.flip_h  else Vector2.RIGHT
+	bullet_instance.direction = facing_direction 
+	get_parent().add_child(bullet_instance)

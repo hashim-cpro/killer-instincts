@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ckjx3noogl6dl"]
+[gd_scene load_steps=15 format=4 uid="uid://ckjx3noogl6dl"]
 
 [ext_resource type="PackedScene" uid="uid://30ywf4vwchjw" path="res://scenes/player.tscn" id="1_los63"]
 [ext_resource type="Texture2D" uid="uid://3vcrgmm073mx" path="res://assets/sprites/world_tileset.png" id="3_6j1wb"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cbsx7jhi0cgvg" path="res://scenes/spline_enemy.tscn" id="7_ww7ff"]
 [ext_resource type="Script" path="res://scripts/spline_enemy.gd" id="8_cl3ig"]
 [ext_resource type="PackedScene" uid="uid://bqkelhompp7uq" path="res://scenes/gun_pickup.tscn" id="8_fxq0w"]
-[ext_resource type="PackedScene" uid="uid://cwtlv53icli0x" path="res://scenes/bullet.tscn" id="9_eefe8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivkn"]
 texture = ExtResource("3_6j1wb")
@@ -177,6 +176,21 @@ sources/0 = SubResource("TileSetAtlasSource_qivkn")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_22jfk"]
 distance = -24.0
 
+[sub_resource type="Animation" id="Animation_41l7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(467, -5)]
+}
+
 [sub_resource type="Animation" id="Animation_owkpu"]
 resource_name = "move"
 length = 2.003
@@ -194,21 +208,6 @@ tracks/0/keys = {
 "values": [Vector2(467, -5), Vector2(620, -77)]
 }
 
-[sub_resource type="Animation" id="Animation_41l7h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(467, -5)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jodx4"]
 _data = {
 "RESET": SubResource("Animation_41l7h"),
@@ -219,7 +218,7 @@ _data = {
 position = Vector2(-1, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_los63")]
-position = Vector2(0, -185)
+position = Vector2(173, -70)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -307,12 +306,7 @@ collision_mask = 2
 script = ExtResource("8_cl3ig")
 
 [node name="Gun" parent="." instance=ExtResource("8_fxq0w")]
-position = Vector2(1289, -164)
-
-[node name="Bullet" parent="." instance=ExtResource("9_eefe8")]
-visible = false
-position = Vector2(-163, 5)
-bullet_speed = 0.0
+position = Vector2(216, -69)
 
 [connection signal="body_entered" from="KillZone" to="CharacterBody2D" method="_on_kill_zone_body_entered"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
