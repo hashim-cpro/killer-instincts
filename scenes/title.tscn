@@ -107,6 +107,7 @@ layout_mode = 2
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="TitleScreen/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Options"
 
