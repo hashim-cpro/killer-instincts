@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Killer Instincts"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 run/name="Killer Intincts"
@@ -68,3 +68,4 @@ attack={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
