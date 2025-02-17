@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ckjx3noogl6dl"]
+[gd_scene load_steps=15 format=4 uid="uid://ckjx3noogl6dl"]
 
 [ext_resource type="PackedScene" uid="uid://30ywf4vwchjw" path="res://scenes/player.tscn" id="1_los63"]
 [ext_resource type="Texture2D" uid="uid://3vcrgmm073mx" path="res://assets/sprites/world_tileset.png" id="3_6j1wb"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cbsx7jhi0cgvg" path="res://scenes/spline_enemy.tscn" id="7_ww7ff"]
 [ext_resource type="Script" path="res://scripts/spline_enemy.gd" id="8_cl3ig"]
 [ext_resource type="PackedScene" uid="uid://bqkelhompp7uq" path="res://scenes/gun_pickup.tscn" id="8_fxq0w"]
-[ext_resource type="PackedScene" uid="uid://cwtlv53icli0x" path="res://scenes/bullet.tscn" id="9_eefe8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivkn"]
 texture = ExtResource("3_6j1wb")
@@ -219,7 +218,7 @@ _data = {
 position = Vector2(-1, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_los63")]
-position = Vector2(0, -185)
+position = Vector2(173, -70)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -307,12 +306,7 @@ collision_mask = 2
 script = ExtResource("8_cl3ig")
 
 [node name="Gun" parent="." instance=ExtResource("8_fxq0w")]
-position = Vector2(1289, -164)
-
-[node name="Bullet" parent="." instance=ExtResource("9_eefe8")]
-visible = false
-position = Vector2(-163, 5)
-bullet_speed = 0.0
+position = Vector2(216, -69)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0

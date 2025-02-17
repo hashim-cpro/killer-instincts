@@ -63,6 +63,7 @@ position = Vector2(0, 5)
 target_position = Vector2(-7, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 light_mask = 2
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_dv2kf")

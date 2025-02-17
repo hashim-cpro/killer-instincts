@@ -14,9 +14,11 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	# Check if colliding area is named "HitBox"
-	if area.name == "HitBox":
+	if area.name == "HitBox" || area.is_in_group("bullets"):
 		queue_free()
 		print("Enemy died!")
+		if area.is_in_group("bullets"):
+			area.queue_free()
 
 func _on_timer_timeout() -> void:
 	print("========Game Restarted==========")
