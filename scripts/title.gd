@@ -12,7 +12,7 @@ func playSplashScreen(splash: String) -> void:
 	$AnimationPlayer.play("splash fade in")
 	await get_tree().create_timer(5).timeout
 	$AnimationPlayer.play("splash fade out")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
