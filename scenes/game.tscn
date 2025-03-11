@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://ckjx3noogl6dl"]
+[gd_scene load_steps=16 format=4 uid="uid://ckjx3noogl6dl"]
 
 [ext_resource type="PackedScene" uid="uid://30ywf4vwchjw" path="res://scenes/player.tscn" id="1_los63"]
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_ty0k1"]
 [ext_resource type="PackedScene" uid="uid://b1ekvcanehg22" path="res://scenes/pause_menu.tscn" id="2_6f7yl"]
 [ext_resource type="Texture2D" uid="uid://3vcrgmm073mx" path="res://assets/sprites/world_tileset.png" id="3_6j1wb"]
 [ext_resource type="PackedScene" uid="uid://det2gu7181u0j" path="res://scenes/platform.tscn" id="4_qdfl2"]
@@ -308,6 +307,10 @@ position = Vector2(216, -69)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_6f7yl")]
 
 [node name="Bar" parent="CanvasLayer" instance=ExtResource("11_seuhf")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_6f7yl")]
 
 [connection signal="body_entered" from="KillZone" to="CharacterBody2D" method="_on_kill_zone_body_entered"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
