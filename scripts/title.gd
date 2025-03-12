@@ -1,11 +1,11 @@
 extends Control
 
-@onready var splashScreen = $SplashScreen
-@onready var titleScreen = $TitleScreen
-@onready var optionsScreen = $OptionsScreen
-@onready var creditsScreen = $CreditsScreen
+@onready var splashScreen = $SplashScreen as TextureRect
+@onready var titleScreen = $TitleScreen as VBoxContainer
+@onready var optionsScreen = $OptionsScreen as VBoxContainer
+@onready var creditsScreen = $CreditsScreen as VBoxContainer
 
-const splashes = ["res://assets/images/Teri Games.png"] as Array<String>
+const splashes = ["res://assets/images/Teri Games.png"]
 
 func playSplashScreen(splash: String) -> void:
 	splashScreen.texture = load(splash)

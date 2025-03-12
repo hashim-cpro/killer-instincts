@@ -53,15 +53,13 @@ text = "Display Mode"
 layout_mode = 2
 selected = 1
 allow_reselect = true
-item_count = 4
+item_count = 3
 popup/item_0/text = "Windowed"
 popup/item_0/id = 0
-popup/item_1/text = "Windowed"
+popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
-popup/item_2/text = "Fullscreen"
-popup/item_2/id = 1
-popup/item_3/text = "Exclusive Fullscreen"
-popup/item_3/id = 2
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
 
 [node name="Resolution_Label" type="Label" parent="TabContainer/Video/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -97,15 +95,17 @@ popup/item_9/id = 9
 layout_mode = 2
 text = "VSync"
 
-[node name="VSync_Button" type="CheckButton" parent="TabContainer/Video/MarginContainer/GridContainer"]
+[node name="VSync_Button" type="OptionButton" parent="TabContainer/Video/MarginContainer/GridContainer"]
 layout_mode = 2
-
-[node name="Bloom_Label" type="Label" parent="TabContainer/Video/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Bloom"
-
-[node name="Bloom_Button" type="CheckButton" parent="TabContainer/Video/MarginContainer/GridContainer"]
-layout_mode = 2
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "Mailbox"
+popup/item_3/id = 3
 
 [node name="DisplayFPS_Label" type="Label" parent="TabContainer/Video/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -205,3 +205,6 @@ metadata/_tab_index = 2
 
 [connection signal="item_selected" from="TabContainer/Video/MarginContainer/GridContainer/DisplayOptions_Button" to="." method="_on_display_options_button_item_selected"]
 [connection signal="item_selected" from="TabContainer/Video/MarginContainer/GridContainer/Resolution_OptionButton" to="." method="_on_resolution_option_button_item_selected"]
+[connection signal="item_selected" from="TabContainer/Video/MarginContainer/GridContainer/VSync_Button" to="." method="_on_v_sync_button_item_selected"]
+[connection signal="toggled" from="TabContainer/Video/MarginContainer/GridContainer/DisplayFPS_Button" to="." method="_on_display_fps_button_toggled"]
+[connection signal="toggled" from="TabContainer/Video/MarginContainer/GridContainer/Borderless_Button" to="." method="_on_borderless_button_toggled"]
