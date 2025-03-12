@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqkelhompp7uq"]
 
-[ext_resource type="Script" path="res://scripts/gun_pickup.gd" id="1_abura"]
+[ext_resource type="Script" uid="uid://nkjn68vy1w7w" path="res://scripts/gun_pickup.gd" id="1_abura"]
 [ext_resource type="Texture2D" uid="uid://bmvjdtqordsex" path="res://assets/sprites/Gun collection FREE version/Gun collection FREE version.svg" id="1_y3mmp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mm7j"]

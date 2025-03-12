@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dk3duerdgfgah"]
 
-[ext_resource type="Script" path="res://addons/ez_tiles/terrain_list_entry.gd" id="1_237eo"]
+[ext_resource type="Script" uid="uid://b4nca3fwn87gn" path="res://addons/ez_tiles/terrain_list_entry.gd" id="1_237eo"]
 [ext_resource type="Texture2D" uid="uid://smg4iofcineo" path="res://addons/ez_tiles/Remove.svg" id="1_e3wgq"]
 [ext_resource type="Texture2D" uid="uid://dwo07c1odx7ob" path="res://addons/ez_tiles/Edit.svg" id="2_6tddt"]
 [ext_resource type="ButtonGroup" uid="uid://b5bf2ekbf2vrc" path="res://addons/ez_tiles/select_terrain_button_group.tres" id="2_framc"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://is8n20fchd2q"]
 
-[ext_resource type="Script" path="res://addons/ez_tiles/ez_tiles_draw/brush_draw.gd" id="1_qrfye"]
+[ext_resource type="Script" uid="uid://bowk7s8u4rv7r" path="res://addons/ez_tiles/ez_tiles_draw/brush_draw.gd" id="1_qrfye"]
 [ext_resource type="PackedScene" uid="uid://chi7cp6qp6vki" path="res://addons/ez_tiles/ez_tiles_draw/range_slider_with_line_edit.tscn" id="2_g17n4"]
 [ext_resource type="Texture2D" uid="uid://bps21xe8h1m2p" path="res://addons/ez_tiles/ez_tiles_draw/icons/Square.svg" id="3_eksbm"]
 [ext_resource type="Texture2D" uid="uid://c7u17hgk6jvet" path="res://addons/ez_tiles/ez_tiles_draw/icons/TerrainConnect.svg" id="3_lefkq"]

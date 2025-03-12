@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://1u5mrsioaaon"]
 
-[ext_resource type="Script" path="res://addons/ez_tiles/images_container.gd" id="1_nrl1h"]
+[ext_resource type="Script" uid="uid://bb420jn4mxocm" path="res://addons/ez_tiles/images_container.gd" id="1_nrl1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daguq"]
 content_margin_left = 10.0

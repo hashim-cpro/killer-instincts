@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bitqwiwmn3s0r"]
 
-[ext_resource type="Script" path="res://addons/ez_tiles/ez_tiles_draw/area_draw.gd" id="1_ee3lv"]
+[ext_resource type="Script" uid="uid://dtm0gdg0dwpq8" path="res://addons/ez_tiles/ez_tiles_draw/area_draw.gd" id="1_ee3lv"]
 [ext_resource type="Texture2D" uid="uid://dooqg3fapf15x" path="res://addons/ez_tiles/ez_tiles_draw/icons/Rectangle.svg" id="2_0c16j"]
 [ext_resource type="Texture2D" uid="uid://xetkyyw6y8ff" path="res://addons/ez_tiles/ez_tiles_draw/icons/RectangleSoft.svg" id="2_lfgj6"]
 [ext_resource type="Texture2D" uid="uid://behgjlyeldpdv" path="res://addons/ez_tiles/ez_tiles_draw/icons/SlopeTL.svg" id="3_j68q8"]

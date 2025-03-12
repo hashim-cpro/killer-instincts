@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cspay6tcjcac4"]
 
 [ext_resource type="Texture2D" uid="uid://bx1aj4msnomd5" path="res://assets/images/Teri Games.png" id="1_il4uk"]
-[ext_resource type="Script" path="res://scripts/title.gd" id="1_wgpm7"]
+[ext_resource type="Script" uid="uid://dt2ns2rk66ypc" path="res://scripts/title.gd" id="1_wgpm7"]
 [ext_resource type="FontFile" uid="uid://bj6gpbsihif0h" path="res://assets/fonts/PixelOperator8.ttf" id="1_yngji"]
 
 [sub_resource type="Theme" id="Theme_wrp1t"]
@@ -54,9 +54,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vhfq3"]
 _data = {
-"RESET": SubResource("Animation_rxayq"),
-"splash fade in": SubResource("Animation_if2nx"),
-"splash fade out": SubResource("Animation_fqah0")
+&"RESET": SubResource("Animation_rxayq"),
+&"splash fade in": SubResource("Animation_if2nx"),
+&"splash fade out": SubResource("Animation_fqah0")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_qqgd0"]
@@ -90,7 +90,7 @@ expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vhfq3")
+&"": SubResource("AnimationLibrary_vhfq3")
 }
 
 [node name="TitleScreen" type="VBoxContainer" parent="."]

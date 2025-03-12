@@ -5,7 +5,7 @@ extends Control
 @onready var optionsScreen = $OptionsScreen
 @onready var creditsScreen = $CreditsScreen
 
-const splashes = ["res://assets/images/Teri Games.png"]
+const splashes = ["res://assets/images/Teri Games.png"] as Array<String>
 
 func playSplashScreen(splash: String) -> void:
 	splashScreen.texture = load(splash)

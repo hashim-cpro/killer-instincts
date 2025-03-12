@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bylxp7tq3yo5s"]
 
-[ext_resource type="Script" path="res://addons/ez_tiles/ez_tiles_draw/ez_tiles_draw_dock.gd" id="1_wtbry"]
+[ext_resource type="Script" uid="uid://gakaaht0otod" path="res://addons/ez_tiles/ez_tiles_draw/ez_tiles_draw_dock.gd" id="1_wtbry"]
 [ext_resource type="Texture2D" uid="uid://pyivvoarllad" path="res://addons/ez_tiles/ez_tiles_draw/icons/Connect1.svg" id="2_dplls"]
 [ext_resource type="PackedScene" uid="uid://bitqwiwmn3s0r" path="res://addons/ez_tiles/ez_tiles_draw/area_draw.tscn" id="2_k0y3s"]
 [ext_resource type="Texture2D" uid="uid://dooqg3fapf15x" path="res://addons/ez_tiles/ez_tiles_draw/icons/Rectangle.svg" id="2_urupm"]
