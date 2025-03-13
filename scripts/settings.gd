@@ -14,7 +14,7 @@ func _on_v_sync_button_item_selected(index: int) -> void:
 	DisplayServer.window_set_vsync_mode(vsyncOptions[index])
 
 func _on_display_fps_button_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_borderless_button_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, toggled_on)

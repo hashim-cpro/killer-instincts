@@ -19,6 +19,8 @@ run/name="Killer Intincts"
 [autoload]
 
 GUIDE="*res://addons/guide/guide.gd"
+FPS="*res://scenes/fps.tscn"
+GlobalVar="*res://scripts/globalVar.gd"
 
 [display]
 
