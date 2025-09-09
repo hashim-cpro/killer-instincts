@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d17iho6xri1nd"]
+
+[ext_resource type="Script" uid="uid://b703eqaiig833" path="res://jump_boost.gd" id="1_7suac"]
+[ext_resource type="Texture2D" uid="uid://c132qfeyd5m5d" path="res://assets/images/14512341-jump_l-removebg-preview.png" id="2_7knhk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow3vr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7knhk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lew4j"]
+radius = 4.12311
+
+[node name="jump boost" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_7suac")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.1875, 0.375001)
+scale = Vector2(0.03125, 0.0225)
+sprite_frames = SubResource("SpriteFrames_ow3vr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_lew4j")

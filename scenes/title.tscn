@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://cspay6tcjcac4"]
+
+[ext_resource type="Texture2D" uid="uid://bx1aj4msnomd5" path="res://assets/images/Teri Games.png" id="1_il4uk"]
+[ext_resource type="Script" uid="uid://dt2ns2rk66ypc" path="res://scripts/title.gd" id="1_wgpm7"]
+[ext_resource type="FontFile" uid="uid://bj6gpbsihif0h" path="res://assets/fonts/PixelOperator8.ttf" id="1_yngji"]
+
+[sub_resource type="Theme" id="Theme_wrp1t"]
+default_font = ExtResource("1_yngji")
+
+[sub_resource type="Animation" id="Animation_rxayq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_if2nx"]
+resource_name = "terigames slash"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fqah0"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhfq3"]
+_data = {
+&"RESET": SubResource("Animation_rxayq"),
+&"splash fade in": SubResource("Animation_if2nx"),
+&"splash fade out": SubResource("Animation_fqah0")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_qqgd0"]
+font_size = 64
+font_color = Color(0.872812, 0, 0.388201, 1)
+
+[sub_resource type="Theme" id="Theme_rqyyy"]
+default_font_size = 32
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wrp1t")
+script = ExtResource("1_wgpm7")
+
+[node name="SplashScreen" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_il4uk")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vhfq3")
+}
+
+[node name="TitleScreen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -106.0
+offset_right = 388.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="Title" type="Label" parent="TitleScreen"]
+layout_mode = 2
+text = "Killer Instincts"
+label_settings = SubResource("LabelSettings_qqgd0")
+horizontal_alignment = 1
+
+[node name="TitleScreen_buttons" type="VBoxContainer" parent="TitleScreen"]
+clip_contents = true
+layout_mode = 2
+theme = SubResource("Theme_rqyyy")
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="TitleScreen/TitleScreen_buttons"]
+layout_mode = 2
+text = "Play"
+flat = true
+clip_text = true
+
+[node name="OptionsButton" type="Button" parent="TitleScreen/TitleScreen_buttons"]
+visible = false
+layout_mode = 2
+text = "Options"
+flat = true
+clip_text = true
+
+[node name="CreditsButton" type="Button" parent="TitleScreen/TitleScreen_buttons"]
+visible = false
+layout_mode = 2
+text = "Credits"
+flat = true
+clip_text = true
+
+[node name="OptionsScreen" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 114.0
+offset_bottom = 44.0
+alignment = 1
+
+[node name="BackButton_fromOptions" type="Button" parent="OptionsScreen"]
+layout_mode = 2
+text = "Back"
+
+[node name="FPSLimit_container" type="HBoxContainer" parent="OptionsScreen"]
+layout_mode = 2
+alignment = 1
+
+[node name="FPSLimit_text" type="Label" parent="OptionsScreen/FPSLimit_container"]
+layout_mode = 2
+text = "FPS Limit"
+
+[node name="CreditsScreen" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton_fromCredits" type="Button" parent="CreditsScreen"]
+layout_mode = 2
+
+[connection signal="pressed" from="TitleScreen/TitleScreen_buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TitleScreen/TitleScreen_buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="TitleScreen/TitleScreen_buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="OptionsScreen/BackButton_fromOptions" to="." method="_on_back_button_from_options_pressed"]
+[connection signal="pressed" from="CreditsScreen/BackButton_fromCredits" to="." method="_on_back_button_from_credits_pressed"]

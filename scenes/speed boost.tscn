@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://5fc7cijuw3ka"]
+
+[ext_resource type="Script" uid="uid://b42mr03rdwx0b" path="res://scenes/speed_boost.gd" id="1_1kks5"]
+[ext_resource type="Texture2D" uid="uid://du4j7e6at5uc0" path="res://assets/images/1053404-200-removebg-preview.png" id="1_hyr3a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kks5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hyr3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3134s"]
+size = Vector2(9, 4)
+
+[node name="speed boost" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_1kks5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.065, 0.05)
+sprite_frames = SubResource("SpriteFrames_1kks5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_3134s")

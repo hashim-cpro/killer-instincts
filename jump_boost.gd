@@ -1,0 +1,10 @@
+extends Area2D
+
+signal _if_body_entered(body) # Define a custom signal
+
+func _on_body_entered(body: Node2D) -> void:
+	print("Player enetered jump boost area, adding jump booost...")
+	emit_signal("_if_body_entered", body) # Emit the signal when the player enters
+	$".".hide()
+	$".".collision_layer = 0 
+	$".".collision_mask = 0

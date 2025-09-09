@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbsx7jhi0cgvg"]
+
+[ext_resource type="Texture2D" uid="uid://dmx375e5hfnfu" path="res://assets/sprites/slime_green.png" id="1_av2oy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i62vu"]
+atlas = ExtResource("1_av2oy")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4xuo"]
+atlas = ExtResource("1_av2oy")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ymow"]
+atlas = ExtResource("1_av2oy")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r58h"]
+atlas = ExtResource("1_av2oy")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k323r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i62vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4xuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ymow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r58h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dv2kf"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdgul"]
+radius = 6.08276
+
+[node name="Spline enemy" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k323r")
+autoplay = "default"
+frame_progress = 0.0800544
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(7, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-7, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_dv2kf")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_qdgul")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
